@@ -1,0 +1,21 @@
+nav{
+    border-radius: 1rem;
+    display: flex;
+    justify-content:baseline;
+    align-items:center;
+    background-color: #edf0f2;
+    font-family: "Bebas Neue", sans-serif;
+}
+
+nav img{
+    height:5rem ;
+    padding: 5px;
+}
+
+.carritoDeCompras {
+    display: flex;
+    margin-left: 42rem;
+    cursor: pointer;
+    height:fit-content;
+    
+}
