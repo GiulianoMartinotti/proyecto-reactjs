@@ -1,9 +1,10 @@
 nav{
-    border-radius: 1rem;
+    padding-right: 2rem;
+    padding-left: 2rem;
     display: flex;
-    justify-content:baseline;
+    justify-content:space-between;
     align-items:center;
-    background-color: #edf0f2;
+    background-color: #98c6c6  ;
     font-family: "Bebas Neue", sans-serif;
 }
 
@@ -14,8 +15,32 @@ nav img{
 
 .carritoDeCompras {
     display: flex;
-    margin-left: 42rem;
     cursor: pointer;
-    height:fit-content;
-    
+    height: fit-content;
+}
+
+.navegacion {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+.navegacion button{
+    cursor: pointer;
+    margin: 1rem;
+    background-color: #f1f4f4  ;
+    color: #565656;
+}
+
+.navegacion a{
+    list-style: none;
+    text-decoration: none;
+    color: #565656;
+}
+
+.botones:hover{
+    color: #565656;
+    background-color: #fef08d;
 }
