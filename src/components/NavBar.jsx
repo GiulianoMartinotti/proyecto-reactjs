@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom";
-import Botones from "./Botones";
 import Carrito from "./Carrito";
 import Logo from "./LogoMarca";
 import './NavBar.css';
@@ -15,7 +14,7 @@ export default function NavBar() {
                     <Link to="/">Home</Link>
                 </button>
                 <button>
-                    <Link to="/category/productos">Productos</Link>
+                    <Link to="/category/verano">Verano</Link>
                 </button>
                 <button>
                     <Link to="/contact">Contacto</Link>

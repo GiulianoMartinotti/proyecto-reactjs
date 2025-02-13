@@ -3,5 +3,12 @@
     justify-content: center;
     font-family: "Bebas Neue", sans-serif;
     font-size: 30px;
-    margin-top: 30px;
+    background-color: #fef08d;
+    color:#565656 ;
+}
+
+.contenedorDeProductos{
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
 }

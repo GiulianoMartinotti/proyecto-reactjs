@@ -1,0 +1,26 @@
+
+
+.productos{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 18px;
+    font-weight: 300;
+    padding: 2rem;
+}
+
+.productos h3{
+    font-weight: 300;
+}
+
+.productos button{
+    color: #565656;
+    background-color:#f1f4f4 ;
+    cursor: pointer;
+}
+
+.productos button:hover{
+    color: #fef08d;
+    background-color: #565656;
+}
