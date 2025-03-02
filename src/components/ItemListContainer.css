@@ -7,8 +7,24 @@
     color:#565656 ;
 }
 
-.contenedorDeProductos{
+.contenedor-productos{
     display: flex;
-    justify-content: space-around;
-    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 50px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+.slogan{
+    display: flex;
+    justify-content: center;
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 30px;
+    background-color: #fef08d;
+    color:#565656 ;
+}
+
+.imagen-portada img {
+    width: 100%;
 }

@@ -8,6 +8,17 @@
     font-size: 18px;
     font-weight: 300;
     padding: 2rem;
+    border-radius: 1rem;
+    border-color: #565656;
+    margin: 1rem;
+    box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
+}
+
+
+.productos img {
+    width: 14rem;
+    height: 13rem;
+    margin: 1rem;
 }
 
 .productos h3{
@@ -18,9 +29,16 @@
     color: #565656;
     background-color:#f1f4f4 ;
     cursor: pointer;
+    margin: 0.5rem;
 }
 
 .productos button:hover{
     color: #fef08d;
-    background-color: #565656;
+    background-color: #fef08d;
+}
+
+.productos a{
+    list-style: none;
+    text-decoration: none;
+    color: #565656;
 }

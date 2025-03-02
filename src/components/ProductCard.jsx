@@ -6,12 +6,12 @@ export default function ProductCard({ product }) {
         <>
             <article className='productos'>
                 <h3>
-                    {product.nombre} - {product.id}
+                    {product.name} - {product.id}
                 </h3>
-                <img src="{product.image}" alt="{product.nombre}" />
-                <p>${product.precio}</p>
+                <img src={product.img} alt={product.name} />
+                <p>${product.price}</p>
                 <button>
-                    <Link to= {'/product/${product.id}'}>Detalles</Link>
+                    <Link to='/product/${product.id}'>Detalles</Link>
                 </button>
             </article>
         </>
