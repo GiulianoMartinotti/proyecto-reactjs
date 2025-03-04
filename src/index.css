@@ -19,10 +19,33 @@ button {
   background-color: #1a1a1a;
 }
 
+.contenedor-footer {
+  background-color: #212f3c;
+  color: #d6dbdf;
+  margin-top: 50px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+  height: 100px;
+  margin-top: auto;
+}
+
+.contenedor-footer h3 {
+  margin: 0;
+}
+
+.contenedor-footer p {
+  margin: 0;
+}
 
 
+body{
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 
-
+}
 
 
 

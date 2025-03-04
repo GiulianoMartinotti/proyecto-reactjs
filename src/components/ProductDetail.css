@@ -1,0 +1,30 @@
+.detalles-del-producto {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    font-family: "Bebas Neue", sans-serif;
+    padding: 1rem;
+}
+
+.imagen-del-producto{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
+    height: 18rem;
+    width: 20rem;
+}
+
+.imagen-del-producto img{
+    width: 12rem;
+    height: 12rem;
+    margin: 1rem;
+}
+
+.información-del-producto{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 1rem;
+}
+

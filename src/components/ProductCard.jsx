@@ -2,18 +2,22 @@ import { Link } from 'react-router-dom'
 import './ProductCard.css'
 
 export default function ProductCard({ product }) {
+
     return (
         <>
             <article className='productos'>
                 <h3>
-                    {product.name} - {product.id}
+                    {product.name}
                 </h3>
-                <img src={product.img} alt={product.name} />
+                <img src={product.image} alt={product.name} />
                 <p>${product.price}</p>
                 <button>
-                    <Link to='/product/${product.id}'>Detalles</Link>
+                <Link to={`/product/${product.id}`}>Mas detalles</Link>
                 </button>
             </article>
         </>
     )
 }
+
+
+//<Link to='/product/${product.id}'>Detalles</Link>//
