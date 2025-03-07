@@ -17,10 +17,10 @@
 }
 
 
-.productos img {
-    width: 12rem;
-    height: 12rem;
-    margin: 1rem;
+.imagenes-productos{
+    width: 20rem;
+    height: 14rem;
+    object-fit: contain;
 }
 
 .productos h3{

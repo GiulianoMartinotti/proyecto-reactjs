@@ -9,7 +9,7 @@ export default function CartWidget() {
     return (
         <>
         <img className='carrito' src={Cart} alt="" />
-        <p>{cart.lenght}</p>
+        <p>{cart.length}</p>
         </>
-    )
+    );
 }

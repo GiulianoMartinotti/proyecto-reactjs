@@ -13,7 +13,16 @@ export default function NavBar() {
                     </Link>
                 </button>
                 <button>
-                    <Link to="/category/verano">Verano</Link>
+                    <Link to="/category/Ray-Ban">Ray-Ban</Link>
+                </button>
+                <button>
+                    <Link to="/category/Rusty">Rusty</Link>
+                </button>
+                <button>
+                    <Link to="/category/Vulk">Vulk</Link>
+                </button>
+                <button>
+                    <Link to="/category/Kipling">Kipling</Link>
                 </button>
             </div>
             <div className="carrito-de-compras">

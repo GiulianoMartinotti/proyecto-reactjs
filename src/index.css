@@ -20,6 +20,9 @@ button {
 }
 
 .contenedor-footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
   background-color: #212f3c;
   color: #d6dbdf;
   margin-top: 50px;
@@ -44,6 +47,7 @@ body{
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  position: relative;
 
 }
 

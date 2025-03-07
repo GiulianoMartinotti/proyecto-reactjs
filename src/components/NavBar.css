@@ -1,3 +1,5 @@
+/* Estilos de los elementos la barra de navegación */
+
 nav{
     padding-right: 2rem;
     padding-left: 2rem;
@@ -12,11 +14,6 @@ nav img{
     height:3rem ;
 }
 
-.carritoDeCompras {
-    display: flex;
-    cursor: pointer;
-    height: fit-content;
-}
 
 .navegacion {
     display: flex;
@@ -41,6 +38,7 @@ nav img{
     color: #565656;
 }
 
+/* Estilos del boton del carrito de compras */
 .carrito-de-compras{
     display: flex;
     justify-content: center;
