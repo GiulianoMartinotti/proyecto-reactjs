@@ -1,40 +1,21 @@
-import { useState } from "react";
 
-export default function ItemCount(){
-    const ItemCount = ({ fn }) => {
-        const [count, setCount] = useState(1);
-    
-        const sumar = () => {
-            if (count < 10) {
-                setCount(count + 1);
-            } else {
-                alert("Excedió el límite de compra");
-            }
-        };
-    
-        const restar = () => {
-            if (count > 1) {
-                setCount(count - 1);
-            }
-        };
-    
-        return (
-            <div className="item-count-container">
-                <button className="btn-count" onClick={restar}>
-                    -
-                </button>
-                <span className="count-display">{count}</span>
-                <button className="btn-count" onClick={sumar}>
-                    +
-                </button>
-    
-                <button className="btn-add-cart" onClick={() => fn(count)}>
-                    Agregar al Carrito
-                </button>
-    
-    
+import './ItemCount.css';
+
+
+export default function productCount({cantidad, handleRestar,handleSumar, handleAgregar}) {
+
+    return (
+        <div>
+            <div className="item-count">
+                <button onClick={handleRestar} className="btn-restar">-</button>
+                <p>{cantidad}</p>
+                <button onClick={handleSumar} className="btn-sumar">+</button>
             </div>
-        );
-    };
+            <button onClick={handleAgregar} className="btn-agregar-carrito" >
+                Agregar al carrito
+            </button>
+        </div>
+    )
 }
+
 

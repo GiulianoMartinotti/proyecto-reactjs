@@ -1,0 +1,36 @@
+.item-count{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.item-count button{
+    background-color:#565656 ;
+    color: #f1f4f4;
+    width: 2rem;
+    height: 2rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    line-height: 1;
+    font-size: 23px;
+}
+
+.btn-restar:hover{
+    background-color: #ff6060;
+    color: #565656;
+}
+
+.btn-sumar:hover{
+    background-color: #b6ff8f; 
+    color: #565656;
+}
+
+.item-count p{
+    font-size: 20px;
+    align-items: center;
+    margin: 0%;
+
+}

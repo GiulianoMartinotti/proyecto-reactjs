@@ -1,15 +1,25 @@
-import { useContext } from "react"
-import { CartContext } from "../context/CartContext"
-import Cart from '../assets/img/icons8-shopping-cart-100.png';
+
+import CartImage from '../assets/img/icons8-shopping-cart-100.png';
+import { Link } from "react-router-dom";
+import React, { useContext } from 'react';
+import { CartContext } from '../context/CartContext';
+import './CartWidget.css'
+
 
 export default function CartWidget() {
 
-    const [cart, setCart] = useContext(CartContext);
+    const { cantidadEnCarrito } = useContext(CartContext);
+
+
 
     return (
         <>
-        <img className='carrito' src={Cart} alt="" />
-        <p>{cart.length}</p>
+        <div>
+            <Link to="/Cart">
+            <img className='img-cart' src={CartImage} alt="" />
+            <span className='num-cart'>{cantidadEnCarrito()}</span>
+            </Link>
+        </div>
         </>
     );
 }

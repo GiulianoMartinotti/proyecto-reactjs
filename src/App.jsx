@@ -3,13 +3,14 @@ import './App.css';
 import ItemListContainer from './components/ItemListContainer';
 import NavBar from './components/NavBar';
 import ItemDetailContainer from './components/ItemDetailContainer';
+import Cart from './components/Cart';
 import { CartProvider } from './context/CartContext';
 
 function App() {
+
   return (
     <>
       <CartProvider>
-
         <BrowserRouter>
 
           <NavBar />
@@ -18,11 +19,12 @@ function App() {
             <Route exact path='/' element={<ItemListContainer />} />
             <Route exact path='/category/:category' element={<ItemListContainer />} />
             <Route exact path='/product/:id' element={<ItemDetailContainer />} />
+            <Route exact path='/Cart' element={<Cart />} />
           </Routes>
 
         </BrowserRouter>
-
       </CartProvider>
+
     </>
   );
 }

@@ -2,34 +2,41 @@
 import { useContext, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import './ItemDetailContainer.css'
-import { CartContext } from "../context/CartContext.jsx";
-import {doc, getDoc} from "firebase/firestore";
+import { doc, getDoc } from "firebase/firestore";
 import { db } from "../firebase/firebase.js";
+import ItemCount from "./ItemCount/ItemCount";
+import { CartContext } from "../context/CartContext.jsx";
 
 
-// Declaraciones
+
 export default function ProductDetail() {
 
-    // Constantes que permiten trasladar la info de cada producto a la vista en detalle del mismo
-    const  id  = useParams().id;
-    const [product, setProduct] = useState(null);
-    // *
+    const { cart, addToCart } = useContext(CartContext);
+    console.log(cart);
 
-    // Constantes que permiten trabajar con el carrito de compras
-    const [cart, setCart, addItem] = useContext(CartContext);
-    const handleClick = () => {
-        addItem(product)
+
+    const [cantidad, setCantidad] = useState(1);
+
+    const handleRestar = () => {
+        cantidad > 1 && setCantidad(cantidad - 1)
+    }
+    const handleSumar = () => {
+        cantidad < product.stock && setCantidad(cantidad + 1)
     }
 
-    // Uso de useEffect para traer los productos
+
+    const id = useParams().id;
+    const [product, setProduct] = useState(null);
+
+
     useEffect(() => {
         const docRef = doc(db, "products", id);
         getDoc(docRef)
-        .then((resp) => {
-            setProduct(
-                {...resp.data(), id: resp.id}
-            );
-        })
+            .then((resp) => {
+                setProduct(
+                    { ...resp.data(), id: resp.id }
+                );
+            })
     }, [id]);
 
 
@@ -52,9 +59,12 @@ export default function ProductDetail() {
                         <h2>Descripción:</h2>
                         <p>{product?.description}</p>
                     </div>
-                    <button className="btn-agregar-carrito" onClick={handleClick}>
-                        Agregar al carrito
-                    </button>
+                    <ItemCount
+                        cantidad={cantidad}
+                        handleSumar={handleSumar}
+                        handleRestar={handleRestar}
+                        handleAgregar={() => { addToCart(product, cantidad) }}
+                    />
                 </div>
 
             </div>
