@@ -1,0 +1,90 @@
+
+
+.chekout-contenedor{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    margin-top: 5rem;
+}
+
+.titulo-checkout{
+    font-family: "Bebas Neue", sans-serif;
+}
+
+.form {
+    padding: 3rem;
+    background-color: #adc1c8 ;
+    border-radius: 3rem;
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+    align-items: flex-start;
+}
+
+
+.form input {
+    padding: .5rem;
+    width: 18rem;
+    border-radius: .5rem;
+    border: 2px solid black;
+}
+
+.form input:focus {
+    outline: 0;
+    border: 2px solid var(--clr-main);
+    outline: 2px solid var(--clr-main);
+}
+
+.btn-comprar{
+    color: #565656;
+    background-color: #fef08d;
+    width: 18rem;
+}
+
+.btn-comprar:hover{
+    color: #f1f4f4;
+    background-color: #6dbd45;
+}
+
+.num-order{
+    font-family: "Bebas Neue", sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.mensaje-final{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 3rem;
+    margin-top: 3rem;
+    padding: 2rem;
+    color: #f1f4f4;
+    background-color:#565656;
+}
+
+.mensaje-final p{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    font-size: 25px;
+    border-radius: 1rem;
+    background-color: #f7c6c6;
+    color: #565656;
+}
+
+.btn-seguir-comprando{
+    color: #565656;
+    background-color: #fef08d;
+}
+
+.btn-seguir-comprando:hover{
+    background-color: #f7c6c6 ;
+    color: #565656;
+}

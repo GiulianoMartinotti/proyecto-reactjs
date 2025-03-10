@@ -5,8 +5,11 @@ import { useParams } from 'react-router-dom';
 import Portada from './Portada';
 import { collection, getDocs, query, where } from 'firebase/firestore';
 import { db } from '../firebase/firebase';
+import ReactLoading from 'react-loading'
 
 export default function ItemListContainer() {
+
+    const [loading, setLoading] = useState(true)
 
     const [products, setProducts] = useState(null);
     const category = useParams().category;
@@ -14,7 +17,7 @@ export default function ItemListContainer() {
     useEffect(() => {
 
         const productsRef = collection(db, "products");
-        const porCat = category? query(productsRef, where("category", "==", category)) : productsRef;
+        const porCat = category ? query(productsRef, where("category", "==", category)) : productsRef;
 
         getDocs(porCat)
             .then((resp) => {
@@ -24,6 +27,7 @@ export default function ItemListContainer() {
                         return { ...doc.data(), id: doc.id }
                     })
                 )
+                setLoading(false);
             })
 
     }, [category])
@@ -37,11 +41,15 @@ export default function ItemListContainer() {
                 <Portada />
             </div>
             <div className='slogan'>¡Los MEJORES LENTES al MEJOR PRECIO!</div>
-            <article className='contenedor-productos'>
-                {products?.map((product) => (
-                    <ProductCard key={product.id} product={product} />
-                ))}
-            </article>
+            {loading ? (
+                <ReactLoading className='loader' type="spin" color="grey" width="100px" height="50px" />
+            ) : (
+                <article className='contenedor-productos'>
+                    {products?.map((product) => (
+                        <ProductCard key={product.id} product={product} />
+                    ))}
+                </article>
+            )}
         </>
     );
 }

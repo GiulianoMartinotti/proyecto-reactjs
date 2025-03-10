@@ -22,10 +22,10 @@ export default function Cart() {
                             <div className="cart-info">
                                 <h3>{prod.name}</h3>
                                 <p>Precio: ${prod.price}</p>
-                                <p>Precio Total: ${prod.price * prod.cantidad}</p>
+                                <p>Subtotal: ${prod.price * prod.cantidad}</p>
                                 <p>Cantidad: {prod.cantidad}</p>
                             </div>
-                            <button className="btn-eliminar" onClick={()=> eliminarDelCarrito(prod.id)}>Eliminar Del Carrito</button>
+                            <button className="btn-eliminar" onClick={() => eliminarDelCarrito(prod.id)}>Eliminar Del Carrito</button>
                         </div>
                     ))
                 }
@@ -33,12 +33,17 @@ export default function Cart() {
                     cart.length > 0 ?
                         <div className="total-clean">
                             <h2 className="total-price">Precio Total de Compra: ${totalPrice()}</h2>
-                            <button className="clean-cart" onClick={handleVaciar}>Vaciar Carrito</button>
+                            <div className="clean-finalizar">
+                                <button className="clean-cart" onClick={handleVaciar}>Vaciar Carrito</button>
+                                <button className="btn-finalizar-compra">
+                                    <Link to="/checkout">Finalizar Compra</Link>
+                                </button>
+                            </div>
                         </div> :
                         <div className="btn-empty">
                             <h2 className="empty-cart">El carrito se encuentra vacío</h2>
                             <Link to={"/"}>
-                            <button className="btn-ver-prods">Ver productos</button>
+                                <button className="btn-ver-prods">Ver productos</button>
                             </Link>
                         </div>
 
