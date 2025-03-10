@@ -3,15 +3,16 @@ import { useContext, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import './ItemDetailContainer.css'
 import { doc, getDoc } from "firebase/firestore";
-import { db } from "../firebase/firebase.js";
 import ItemCount from "./ItemCount/ItemCount";
+import { db } from "../firebase/firebase.js";
 import { CartContext } from "../context/CartContext.jsx";
 
 
 
 export default function ProductDetail() {
 
-    const { cart, addToCart } = useContext(CartContext);
+
+    const { cart, addToCart, itemCountVisible, setItemCountVisible } = useContext(CartContext);
     console.log(cart);
 
 
@@ -36,8 +37,10 @@ export default function ProductDetail() {
                 setProduct(
                     { ...resp.data(), id: resp.id }
                 );
-            })
-    }, [id]);
+            });
+
+            setItemCountVisible(true);
+    }, [id, setItemCountVisible]);
 
 
 
@@ -59,12 +62,14 @@ export default function ProductDetail() {
                         <h2>Descripción:</h2>
                         <p>{product?.description}</p>
                     </div>
-                    <ItemCount
-                        cantidad={cantidad}
-                        handleSumar={handleSumar}
-                        handleRestar={handleRestar}
-                        handleAgregar={() => { addToCart(product, cantidad) }}
-                    />
+                    {itemCountVisible && (
+                        <ItemCount
+                            cantidad={cantidad}
+                            handleSumar={handleSumar}
+                            handleRestar={handleRestar}
+                            handleAgregar={() => addToCart(product, cantidad)}
+                        />
+                    )}
                 </div>
 
             </div>

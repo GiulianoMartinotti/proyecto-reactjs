@@ -52,7 +52,6 @@ export default function Checkout() {
             if (result.dismiss === Swal.DismissReason.timer) {
             }
         });
-
     }
 
     if (orderId) {
@@ -67,10 +66,7 @@ export default function Checkout() {
                 </div>
             </div>
         )
-
     }
-
-
 
 
     return (

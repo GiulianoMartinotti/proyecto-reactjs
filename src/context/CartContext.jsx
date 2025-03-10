@@ -8,6 +8,8 @@ const carritoInicial = JSON.parse(localStorage.getItem("carrito")) || [];
 export const CartProvider = ({ children }) => {
 
     const [cart, setCart] = useState(carritoInicial);
+    const [itemCountVisible, setItemCountVisible] = useState(true);
+
 
     const addToCart = (product, cantidad) => {
         const itemAgregado = { ...product, cantidad };
@@ -21,6 +23,7 @@ export const CartProvider = ({ children }) => {
         } else {
             newCart.push(itemAgregado);
         }
+        setItemCountVisible(false);
         Swal.fire({
             position: "top-end",
             icon: "success",
@@ -83,7 +86,9 @@ export const CartProvider = ({ children }) => {
             totalPrice,
             cleanCart,
             eliminarDelCarrito,
-            cleanCartAlert
+            cleanCartAlert,
+            setItemCountVisible,
+            itemCountVisible
         }}>
             {children}
         </CartContext.Provider>
