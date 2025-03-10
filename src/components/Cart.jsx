@@ -5,10 +5,10 @@ import { Link } from "react-router-dom";
 
 export default function Cart() {
 
-    const { cart, totalPrice, cleanCart, eliminarDelCarrito } = useContext(CartContext);
+    const { cart, totalPrice, cleanCartAlert, eliminarDelCarrito } = useContext(CartContext);
 
     const handleVaciar = () => {
-        cleanCart();
+        cleanCartAlert();
     }
 
 

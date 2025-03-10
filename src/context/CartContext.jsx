@@ -1,4 +1,5 @@
 import { createContext, useEffect, useState } from "react";
+import Swal from "sweetalert2";
 
 export const CartContext = createContext();
 
@@ -20,6 +21,13 @@ export const CartProvider = ({ children }) => {
         } else {
             newCart.push(itemAgregado);
         }
+        Swal.fire({
+            position: "top-end",
+            icon: "success",
+            title: "¡Agregado al carrito!",
+            showConfirmButton: false,
+            timer: 1000
+        });
         setCart(newCart);
     }
 
@@ -33,6 +41,28 @@ export const CartProvider = ({ children }) => {
 
     const cleanCart = () => {
         setCart([]);
+    }
+
+    const cleanCartAlert = () => {
+        Swal.fire({
+            title: "Está seguro que desea vaciar el carrito?",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#6dbd45",
+            cancelButtonColor: "#d33",
+            confirmButtonText: "Confirmar",
+            cancelButtonText: "No, conservar carrito"
+        }).then((result) => {
+            if (result.isConfirmed) {
+                Swal.fire({
+                    title: "¡Hecho!",
+                    text: "El carrito ahora se encuentra vacío",
+                    icon: "success",
+                    confirmButtonColor: "#6dbd45"
+                });
+                setCart([]);
+            }
+        });
     }
 
     const eliminarDelCarrito = (id) => {
@@ -52,7 +82,8 @@ export const CartProvider = ({ children }) => {
             cantidadEnCarrito,
             totalPrice,
             cleanCart,
-            eliminarDelCarrito
+            eliminarDelCarrito,
+            cleanCartAlert
         }}>
             {children}
         </CartContext.Provider>

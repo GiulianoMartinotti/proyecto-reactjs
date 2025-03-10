@@ -5,6 +5,7 @@ import { collection, addDoc } from "firebase/firestore";
 import { db } from "../firebase/firebase";
 import './Checkout.css';
 import { Link } from "react-router-dom";
+import Swal from "sweetalert2";
 
 
 
@@ -31,6 +32,26 @@ export default function Checkout() {
                 setOrderId(doc.id);
                 cleanCart();
             })
+
+        let timerInterval;
+        Swal.fire({
+            title: "Procesando compra...",
+            timer: 2000,
+            timerProgressBar: true,
+            didOpen: () => {
+                Swal.showLoading();
+                const timer = Swal.getPopup().querySelector("b");
+                timerInterval = setInterval(() => {
+                    timer.textContent = `${Swal.getTimerLeft()}`;
+                }, 100);
+            },
+            willClose: () => {
+                clearInterval(timerInterval);
+            }
+        }).then((result) => {
+            if (result.dismiss === Swal.DismissReason.timer) {
+            }
+        });
 
     }
 
