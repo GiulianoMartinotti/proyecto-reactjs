@@ -1,6 +1,4 @@
-
-
-.chekout-contenedor{
+.chekout-contenedor {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -9,46 +7,48 @@
     margin-top: 5rem;
 }
 
-.titulo-checkout{
+.titulo-checkout {
     font-family: "Bebas Neue", sans-serif;
+    color: #565656;
 }
 
 .form {
-    padding: 3rem;
-    background-color: #adc1c8 ;
-    border-radius: 3rem;
     display: flex;
     flex-direction: column;
-    gap: .5rem;
-    align-items: flex-start;
+    gap: 10px;
+    background-color: #e8e7e4 ;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="phone"] {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
 }
 
 
-.form input {
-    padding: .5rem;
-    width: 18rem;
-    border-radius: .5rem;
-    border: 2px solid black;
+.btn-comprar {
+    padding: 12px;
+    background: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.2s;
+    font-size: 16px;
 }
 
-.form input:focus {
-    outline: 0;
-    border: 2px solid var(--clr-main);
-    outline: 2px solid var(--clr-main);
+.btn-comprar:hover {
+    background: #0056b3;
 }
 
-.btn-comprar{
-    color: #565656;
-    background-color: #fef08d;
-    width: 18rem;
-}
-
-.btn-comprar:hover{
-    color: #f1f4f4;
-    background-color: #6dbd45;
-}
-
-.num-order{
+.num-order {
     font-family: "Bebas Neue", sans-serif;
     display: flex;
     flex-direction: column;
@@ -56,7 +56,7 @@
     align-items: center;
 }
 
-.mensaje-final{
+.mensaje-final {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -65,10 +65,10 @@
     margin-top: 3rem;
     padding: 2rem;
     color: #f1f4f4;
-    background-color:#565656;
+    background-color: #565656;
 }
 
-.mensaje-final p{
+.mensaje-final p {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -79,12 +79,40 @@
     color: #565656;
 }
 
-.btn-seguir-comprando{
+.btn-seguir-comprando {
     color: #565656;
     background-color: #fef08d;
 }
 
-.btn-seguir-comprando:hover{
-    background-color: #f7c6c6 ;
+.btn-seguir-comprando:hover {
+    background-color: #f7c6c6;
     color: #565656;
+}
+
+.resumen-compra {
+    margin-top: 20px;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    width: 600px;
+    margin-bottom: 1rem;
+}
+
+.resumen-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.resumen-item:last-child {
+    border-bottom: none;
+}
+
+/* Total Final */
+.total-final {
+    margin-top: 15px;
+    text-align: right;
+    font-size: 18px;
 }

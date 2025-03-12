@@ -2,10 +2,11 @@ import React, { useContext } from "react";
 import { CartContext } from "../context/CartContext";
 import './Cart.css';
 import { Link } from "react-router-dom";
+import ItemCount from "./ItemCount/ItemCount";
 
 export default function Cart() {
 
-    const { cart, totalPrice, cleanCartAlert, eliminarDelCarrito } = useContext(CartContext);
+    const { cart, totalPrice, cleanCartAlert, eliminarDelCarrito, updateCartItemQuantity } = useContext(CartContext);
 
     const handleVaciar = () => {
         cleanCartAlert();
@@ -24,6 +25,13 @@ export default function Cart() {
                                 <p>Precio: ${prod.price}</p>
                                 <p>Subtotal: ${prod.price * prod.cantidad}</p>
                                 <p>Cantidad: {prod.cantidad}</p>
+                                <ItemCount
+                                    cantidad={prod.cantidad}
+                                    handleRestar={() => updateCartItemQuantity(prod.id, prod.cantidad - 1)}
+                                    handleSumar={() => updateCartItemQuantity(prod.id, prod.cantidad + 1)}
+                                    showAddButton={false}
+                                    showQuantity={false}
+                                />
                             </div>
                             <button className="btn-eliminar" onClick={() => eliminarDelCarrito(prod.id)}>Eliminar Del Carrito</button>
                         </div>

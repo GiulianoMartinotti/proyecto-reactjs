@@ -34,6 +34,13 @@ export const CartProvider = ({ children }) => {
         setCart(newCart);
     }
 
+    const updateCartItemQuantity = (id, cantidad) => {
+        const updatedCart = cart.map((prod) =>
+            prod.id === id ? { ...prod, cantidad: Math.max(1, cantidad) } : prod
+        );
+        setCart(updatedCart);
+    };
+
     const cantidadEnCarrito = () => {
         return cart.reduce((acc, prod) => acc + prod.cantidad, 0);
     }
@@ -87,6 +94,7 @@ export const CartProvider = ({ children }) => {
             cleanCart,
             eliminarDelCarrito,
             cleanCartAlert,
+            updateCartItemQuantity,
             setItemCountVisible,
             itemCountVisible
         }}>

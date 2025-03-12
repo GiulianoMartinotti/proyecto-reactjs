@@ -2,44 +2,72 @@
 
 .detalles-del-producto {
     display: flex;
-    flex-direction: row;
     justify-content: center;
     align-items: center;
-    font-family: "Bebas Neue", sans-serif;
-    padding: 1rem;
-    margin-left: 3rem;
+    gap: 40px;
+    padding: 40px;
+    max-width: 1200px;
+    margin: 40px auto;
+    background: #ffffff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
 }
 
 .imagen-del-producto {
+    max-width: 400px;
+    border: 1px solid #f0f0f0;
+    border-radius: 12px;
+    overflow: hidden;
+    background: #f9f9f9;
+    padding: 20px;
     display: flex;
     justify-content: center;
     align-items: center;
-    box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
-    height: 19.1rem;
-    width: 20rem;
-    margin-bottom: 15rem;
 }
 
-.imagen-del-producto img{
-    width: 20rem;
-    height: 14rem;
-    object-fit: contain;
+.imagen-del-producto img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
 }
 
 .información-del-producto {
     display: flex;
     flex-direction: column;
-    align-items: baseline;
-    justify-content: center;
-    margin-left: 2rem;
+    gap: 15px;
+    max-width: 500px;
 }
 
-.información-del-producto h4{
-    background-color: #f7c6c6;
-    border-radius: 2rem;
-    width: fit-content;
-    padding: 0.5rem;
+.información-del-producto h1, 
+.información-del-producto h3, 
+.información-del-producto h4 {
+    color: #333;
+    margin: 0;
 }
+
+.información-del-producto p {
+    color: #555;
+    margin: 5px 0;
+}
+
+.descripcion-producto {
+    margin-top: 15px;
+    background: #f7f7f7;
+    padding: 15px;
+    border-radius: 8px;
+    border: 1px solid #e0e0e0;
+}
+
+.descripcion-producto h2 {
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.descripcion-producto p {
+    color: #666;
+    line-height: 1.5;
+}
+
 
 .btn-agregar-carrito {
     margin-top: 1rem;
@@ -52,14 +80,19 @@
     color: #fef08d;
 }
 
+@media (max-width: 768px) {
+    .detalles-del-producto {
+        flex-direction: column;
+        padding: 20px;
+    }
 
-.descripcion-producto {
-    display: flex;
-    align-items: first baseline;
-    flex-direction: column;
-    width: 30rem;
+    .imagen-del-producto {
+        max-width: 100%;
+    }
+
+    .información-del-producto {
+        max-width: 100%;
+    }
 }
 
-.descripcion-producto p{
-    width: 105px;
-}
+

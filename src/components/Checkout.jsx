@@ -13,6 +13,8 @@ export default function Checkout() {
 
     const [orderId, setOrderId] = useState("");
 
+    const [purchasedItems, setPurchasedItems] = useState([]);
+
     const { cart, totalPrice, cleanCart } = useContext(CartContext);
 
     const { register, handleSubmit } = useForm();
@@ -22,7 +24,8 @@ export default function Checkout() {
             client: data,
             productos: cart,
             total: totalPrice()
-        }
+        };
+        setPurchasedItems(cart);
         console.log(order);
 
         const ordersRef = collection(db, "orders");
@@ -60,6 +63,17 @@ export default function Checkout() {
                 <div className="mensaje-final">
                     <h1>¡Muchas gracias por su compra!</h1>
                     <p>Tu número de orden es: {orderId}</p>
+                    <div className="resumen-compra">
+                        <h2>Resumen de Compra</h2>
+                        {purchasedItems.map((prod) => (
+                            <div className="resumen-item" key={prod.id}>
+                                <span>{prod.name}</span>
+                                <span>Cantidad: {prod.cantidad}</span>
+                                <span>Subtotal: ${prod.price * prod.cantidad}</span>
+                            </div>
+                        ))}
+                        <h3 className="total-final">Total: ${purchasedItems.reduce((acc, prod) => acc + prod.price * prod.cantidad, 0)}</h3>
+                    </div>
                     <Link to={"/"}>
                         <button className="btn-seguir-comprando">Seguir Comprando</button>
                     </Link>
