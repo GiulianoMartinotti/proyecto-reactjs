@@ -64,6 +64,7 @@
 .clean-cart:hover{
     background-color: #ff6060;
     color: #565656;
+    transition: background 0.2s;
 }
 
 .total-clean{
@@ -126,5 +127,6 @@ color: #565656;
 }
 
 .btn-finalizar-compra:hover{
+    transition: background 0.2s;
     background-color: #6dbd45;
 }

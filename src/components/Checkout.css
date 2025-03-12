@@ -35,8 +35,8 @@ input[type="phone"] {
 
 .btn-comprar {
     padding: 12px;
-    background: #007bff;
-    color: white;
+    background-color: #fef08d;
+    color: #565656;
     border: none;
     border-radius: 5px;
     cursor: pointer;
@@ -45,7 +45,8 @@ input[type="phone"] {
 }
 
 .btn-comprar:hover {
-    background: #0056b3;
+    background-color: #565656;
+    color: #fef08d;
 }
 
 .num-order {
